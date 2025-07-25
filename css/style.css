@@ -1,0 +1,780 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*-------VARIABLES COLORES---------------------------------------------------------------------------------------------------------*/
+:root {
+  --color-primario: #927459;
+  --color-secundario: #1f1f1f;
+  --color-terceario: #fff0f0;
+  --bg-color: #f4f1d6;
+}
+/*-------VARIABLES COLORES---------------------------------------------------------------------------------------------------------*/
+
+/*-------BODY---------------------------------------------------------------------------------------------------------*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+}
+/*-------BODY---------------------------------------------------------------------------------------------------------*/
+
+/*-------HEADER--------------------------------------------------------------------------------------------------*/
+.header {
+  background-color: var(--color-secundario);
+}
+
+.header_container {
+  max-width: 640px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header_logo {
+  margin: auto;
+}
+
+.header_logo img {
+  width: 100px;
+}
+
+.navbar {
+  margin: 20px;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.navbar ul li {
+  list-style: none;
+  margin: 10px 5px;
+}
+
+.navbar ul li a {
+  color: var(--color-terceario);
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.4s;
+}
+
+.navbar ul li a:hover {
+  background-color: var(--color-primario);
+  border-radius: 20px;
+}
+/*-------HEADER---------------------------------------------------------------------------------------------------------*/
+
+/*-------MAIN INICIO---------------------------------------------------------------------------------------------------------*/
+.main {
+  min-height: 100vh;
+}
+
+.main_container {
+  --opacidad-negro: 0.5;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/bg-inicio.jpg");
+  background-position: center center;
+  background-repeat: none;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.main_container h1 {
+  font-weight: 600;
+  font-size: 30px;
+  margin: 10px;
+  color: var(--color-terceario);
+}
+
+.main_container h1 span {
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--color-primario);
+  padding-left: 5px;
+}
+
+.main_container h2 {
+  font-size: 25px;
+  font-weight: 100;
+  color: var(--color-primario);
+}
+
+.main_container p {
+  font-size: 15px;
+  margin: 40px;
+  color: var(--color-terceario);
+}
+/*-------MAIN INICIO---------------------------------------------------------------------------------------------------------*/
+
+/*-------ARTICULOS---------------------------------------------------------------------------------------------------------*/
+.title_articles {
+  text-align: center;
+  padding: 40px 0px;
+}
+
+.title_articles h1 {
+  color: var(--color-primario);
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.articles_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.articles_container article {
+  width: 280px;
+  height: 500px;
+  background-color: var(--color-secundario);
+  margin: 0px 20px 50px 0px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.338);
+  transition: transform 0.3s ease;
+}
+
+.articles_container article:hover {
+  transform: scale(1.1);
+}
+
+.articles_container article img {
+  width: 100%;
+  height: 70%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  object-fit: cover;
+}
+
+.articles_container h3 {
+  font-size: 20px;
+  margin: 10px;
+  text-transform: uppercase;
+  color: #927459;
+}
+
+.articles_container article p {
+  color: var(--color-terceario);
+  margin: 10px;
+}
+
+.articles_container article button {
+  color: var(--color-terceario);
+  font-weight: bold;
+  margin: 10px 0px;
+  padding: 15px 40px;
+  background-color: var(--color-primario);
+  cursor: pointer;
+  border: 2px transparent;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.articles_container article button:hover {
+  color: var(--color-primario);
+  background-color: var(--color-terceario);
+  border-color: var(--color-primario);
+}
+
+/*-------ARTICULOS---------------------------------------------------------------------------------------------------------*/
+
+/*-------SOBRE NOSOTROS---------------------------------------------------------------------------------------------------------*/
+.sobrenosotros_container {
+  max-width: 640px;
+  margin: auto;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template:
+    "sobrenosotros"
+    "localmateros"
+    "nuestrahistoria"
+    "quenosdiferencia";
+  overflow: hidden;
+}
+.sobrenosotros {
+  grid-area: sobrenosotros;
+  padding: 0px 20px;
+}
+.nuestrahistoria {
+  grid-area: nuestrahistoria;
+  padding: 0px 20px;
+}
+.localmateros {
+  grid-area: localmateros;
+}
+.quenosdiferencia {
+  grid-area: quenosdiferencia;
+  padding: 0px 40px;
+}
+
+.sobrenosotros_container section {
+  margin: 20px 0px;
+}
+
+.sobrenosotros_container h1 {
+  padding: 10px 0px;
+  color: var(--color-primario);
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.sobrenosotros_container h2 {
+  padding: 10px 0px;
+  color: var(--color-primario);
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.sobrenosotros_container h3 {
+  padding: 10px 0px;
+  color: var(--color-primario);
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.sobrenosotros_container .localmateros img {
+  display: flex;
+  margin: auto;
+  width: 300px;
+  box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.338);
+  border-radius: 5px;
+}
+
+.sobrenosotros_container p {
+  font-size: 12px;
+}
+
+.sobrenosotros_container .quenosdiferencia ul li {
+  font-size: 12px;
+}
+/*-------SOBRE NOSOTROS---------------------------------------------------------------------------------------------------------*/
+
+/*-------CONTACTO---------------------------------------------------------------------------------------------------------*/
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_container {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --opacidad-negro: 0.5;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/bg-contacto.jpg");
+  background-position: center center;
+  background-repeat: none;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.contact_container h1 {
+  color: var(--color-primario);
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+  padding: 40px 0px;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_container input {
+  width: 300px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.input_container label {
+  color: var(--color-terceario);
+  margin-top: 10px;
+}
+
+.input_container textarea {
+  padding: 10px;
+  height: 100px;
+}
+
+.btn_formulario {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn_formulario button {
+  color: var(--color-terceario);
+  font-weight: bold;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 18px;
+  background-color: var(--color-primario);
+  border: 2px solid transparent;
+  transition: all 0.4s;
+}
+
+.btn_formulario button:hover {
+  background-color: var(--color-terceario);
+  color: var(--color-primario);
+  border: 2px solid;
+  border-color: var(--color-primario);
+  cursor: pointer;
+}
+
+.title_contact {
+  padding: 20px;
+  font-size: 60px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.contact_whatsapp {
+  padding: 50px 0px;
+}
+
+.contact_whatsapp a {
+  color: white;
+  background-color: rgb(2, 176, 2);
+  padding: 10px 30px;
+  border-radius: 20px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.contact_whatsapp a:hover {
+  background-color: rgba(2, 192, 2, 0.727);
+}
+
+.contact_whatsapp img {
+  width: 50px;
+}
+/*-------CONTACTO---------------------------------------------------------------------------------------------------------*/
+
+/*-------FOOTER---------------------------------------------------------------------------------------------------------*/
+.footer {
+  background-color: var(--color-secundario);
+}
+
+.footer_container {
+  padding: 40px 0px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template:
+    "logo"
+    "menu"
+    "sociales"
+    "ubicacion"
+    "linea"
+    "copy";
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer_logo {
+  grid-area: logo;
+}
+
+.footer_menu {
+  grid-area: menu;
+}
+
+.footer_sociales {
+  grid-area: sociales;
+}
+
+.footer_ubicacion {
+  grid-area: ubicacion;
+}
+.footer_linea {
+  grid-area: linea;
+}
+
+.footer_copy {
+  grid-area: copy;
+  font-size: 12px;
+}
+
+.footer_logo img {
+  width: 100px;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer ul li {
+  margin: 10px;
+}
+
+.footer p {
+  color: var(--color-terceario);
+  padding: 5px 0px;
+}
+
+.footer a {
+  margin: 5px;
+  text-decoration: none;
+  color: var(--color-terceario);
+  transition: all 0.3s;
+}
+
+.footer a:hover {
+  color: var(--color-primario);
+}
+
+.footer h3 {
+  margin: 10px;
+  color: var(--color-primario);
+}
+
+.footer_container hr {
+  width: 100%;
+  border-color: var(--color-primario);
+}
+/*-------FOOTER---------------------------------------------------------------------------------------------------------*/
+
+/*-------MEDIA QUERIES RESPONSIVE-----------------------------------------------------------------------------------------*/
+
+@media (min-width: 640px) {
+  /*MQ-FOOTER*/
+  .footer_container {
+    max-width: 640px;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template:
+      "logo menu"
+      "sociales ubicacion"
+      "linea linea"
+      "copy copy";
+    justify-content: space-evenly;
+  }
+  .footer_copy {
+    font-size: 14px;
+  }
+  /*MQ-FOOTER*/
+}
+
+@media (min-width: 800px) {
+  /*HEADER*/
+  .header_container {
+    max-width: 800px;
+  }
+  .navbar ul {
+    flex-direction: row;
+  }
+  .navbar ul li a {
+    font-size: 14px;
+  }
+  .header_logo img {
+    width: 120px;
+  }
+  /*HEADER*/
+
+  /*MQ-MAIN-INICIO*/
+  .main_container h1 {
+    font-size: 50px;
+  }
+  .main_container h1 span {
+    font-size: 55px;
+  }
+  .main_container h2 {
+    font-size: 35px;
+  }
+  .main_container p {
+    font-size: 25px;
+  }
+  /*MQ-MAIN-INICIO*/
+
+  /*MQ-ARTICULOS*/
+  .articles_container {
+    max-width: 800px;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /*MQ-ARTICULOS*/
+
+  /*MQ-SOBRENOSOTROS*/
+  .sobrenosotros_container {
+    max-width: 800px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template:
+      "sobrenosotros"
+      "localmateros"
+      "nuestrahistoria"
+      "quenosdiferencia";
+  }
+  .sobrenosotros_container .localmateros img {
+    width: 500px;
+  }
+  .sobrenosotros_container h1 {
+    font-size: 35px;
+  }
+
+  .sobrenosotros_container h2 {
+    font-size: 25px;
+  }
+
+  .sobrenosotros_container h3 {
+    font-size: 15px;
+  }
+  .sobrenosotros_container p {
+    font-size: 16px;
+  }
+  .sobrenosotros_container .quenosdiferencia ul li {
+    font-size: 16px;
+  }
+  /*MQ-SOBRENOSOTROS*/
+
+  /*MQ-CONTACTO*/
+  .input_container input {
+    width: 500px;
+  }
+  .input_container textarea {
+    height: 300px;
+  }
+  /*MQ-CONTACTO*/
+
+  /*MQ-FOOTER*/
+  .footer_container {
+    max-width: 800px;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template:
+      "logo menu sociales ubicacion"
+      "linea linea linea linea"
+      "copy copy copy copy";
+  }
+  .footer_copy {
+    font-size: 16px;
+  }
+  /*MQ-FOOTER*/
+}
+
+@media (min-width: 1000px) {
+  /*HEADER*/
+  .header_container {
+    max-width: 1000px;
+  }
+  .navbar ul li a {
+    font-size: 14px;
+  }
+  .navbar ul {
+    flex-direction: row;
+  }
+  .header_logo img {
+    width: 150px;
+  }
+  /*HEADER*/
+
+  /*MQ-MAIN-INICIO*/
+  .main_container h1 {
+    font-size: 60px;
+  }
+  .main_container h1 span {
+    font-size: 65px;
+  }
+  .main_container h2 {
+    font-size: 40px;
+  }
+  /*MQ-MAIN-INICIO*/
+
+  /*MQ-ARTICULOS*/
+  .articles_container {
+    max-width: 1000px;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /*MQ-ARTICULOS*/
+
+  /*MQ-SOBRENOSOTROS*/
+  .sobrenosotros_container {
+    max-width: 1000px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template:
+      "sobrenosotros localmateros"
+      "nuestrahistoria localmateros"
+      "quenosdiferencia localmateros";
+  }
+  .sobrenosotros_container .localmateros img {
+    margin-left: 60px;
+    width: 450px;
+  }
+  .sobrenosotros_container h1 {
+    font-size: 40px;
+  }
+
+  .sobrenosotros_container h2 {
+    font-size: 30px;
+  }
+
+  .sobrenosotros_container h3 {
+    font-size: 20px;
+  }
+  .sobrenosotros_container p {
+    font-size: 18px;
+  }
+
+  .sobrenosotros_container .quenosdiferencia ul li {
+    font-size: 18px;
+  }
+  /*MQ-SOBRENOSOTROS*/
+
+  /*MQ-CONTACTO*/
+  .input_container input {
+    width: 600px;
+  }
+  /*MQ-CONTACTO*/
+
+  /*MQ-FOOTER*/
+  .footer_container {
+    max-width: 1000px;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template:
+      "logo menu sociales ubicacion"
+      "linea linea linea linea"
+      "copy copy copy copy";
+  }
+  .footer_copy {
+    font-size: 18px;
+  }
+  /*MQ-FOOTER*/
+}
+
+@media (min-width: 1200px) {
+  /*HEADER*/
+  .header_container {
+    max-width: 1200px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .header_logo {
+    margin-left: 0;
+  }
+  .navbar {
+    margin-right: 0;
+  }
+  /*HEADER*/
+
+  /*MQ-MAIN-INICIO*/
+  .main_container h1 {
+    font-size: 80px;
+  }
+  .main_container h1 span {
+    font-size: 85px;
+  }
+  .main_container h2 {
+    font-size: 45px;
+  }
+  /*MQ-MAIN-INICIO*/
+
+  /*MQ-ARTICULOS*/
+  .articles_container {
+    max-width: 1200px;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /*MQ-ARTICULOS*/
+
+  /*MQ-SOBRENOSOTROS*/
+  .header_container {
+    max-width: 1200px;
+  }
+  .sobrenosotros_container {
+    max-width: 1400px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template:
+      "sobrenosotros localmateros"
+      "nuestrahistoria localmateros"
+      "quenosdiferencia localmateros";
+  }
+  .sobrenosotros_container .localmateros img {
+    margin-left: 30px;
+    width: 600px;
+  }
+  .sobrenosotros_container h1 {
+    font-size: 40px;
+  }
+
+  .sobrenosotros_container h2 {
+    font-size: 30px;
+  }
+
+  .sobrenosotros_container h3 {
+    font-size: 20px;
+  }
+
+  .sobrenosotros_container p {
+    font-size: 20px;
+  }
+  .sobrenosotros_container .quenosdiferencia ul li {
+    font-size: 20px;
+  }
+  /*MQ-SOBRENOSOTROS*/
+
+  /*MQ-CONTACTO*/
+  .input_container input {
+    width: 600px;
+  }
+  /*MQ-CONTACTO*/
+
+  /*MQ-FOOTER*/
+  .footer_container {
+    max-width: 1200px;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template:
+      "logo menu sociales ubicacion"
+      "linea linea linea linea"
+      "copy copy copy copy";
+    justify-content: space-between;
+  }
+  /*MQ-FOOTER*/
+}
+
+/*-------MEDIA QUERIES RESPONSIVE-------------------------------------------------------------------------------------------*/
