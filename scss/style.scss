@@ -1,9 +1,6 @@
+@use "layout/variables" as v;
+@use "layout/button";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
-$color-primario: #927459;
-$color-secundario: #1f1f1f;
-$color-terceario: #fff0f0;
-$bg-color: #f4f1d6;
 
 * {
   margin: 0;
@@ -13,11 +10,11 @@ $bg-color: #f4f1d6;
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: $bg-color;
+  background-color: v.$bg-color;
 }
 
 .header {
-  background-color: $color-secundario;
+  background-color: v.$color-secundario;
 }
 
 .header_container {
@@ -52,7 +49,7 @@ body {
   }
 
   a {
-    color: $color-terceario;
+    color: v.$color-terceario;
     text-decoration: none;
     font-size: 12px;
     text-transform: uppercase;
@@ -62,7 +59,7 @@ body {
   }
 
   a:hover {
-    background-color: $color-primario;
+    background-color: v.$color-primario;
     border-radius: 20px;
   }
 }
@@ -91,26 +88,26 @@ body {
     font-weight: 600;
     font-size: 30px;
     margin: 10px;
-    color: $color-terceario;
+    color: v.$color-terceario;
   }
 
   span {
     font-size: 35px;
     font-weight: 800;
-    color: $color-primario;
+    color: v.$color-primario;
     padding-left: 5px;
   }
 
   h2 {
     font-size: 25px;
     font-weight: 400;
-    color: $color-primario;
+    color: v.$color-primario;
   }
 
   p {
     font-size: 15px;
     margin: 40px;
-    color: $color-terceario;
+    color: v.$color-terceario;
   }
 }
 
@@ -119,7 +116,7 @@ body {
   padding: 40px 0px;
 
   h1 {
-    color: $color-primario;
+    color: v.$color-primario;
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 800;
@@ -143,7 +140,7 @@ body {
   article {
     width: 280px;
     height: 500px;
-    background-color: $color-secundario;
+    background-color: v.$color-secundario;
     margin: 0px 20px 50px 0px;
     padding-bottom: 20px;
     border-radius: 5px;
@@ -159,26 +156,8 @@ body {
     }
 
     p {
-      color: $color-terceario;
+      color: v.$color-terceario;
       margin: 10px;
-    }
-
-    button {
-      color: $color-terceario;
-      font-weight: bold;
-      margin: 10px 0px;
-      padding: 15px 40px;
-      background-color: $color-primario;
-      cursor: pointer;
-      border: 2px transparent;
-      border-radius: 30px;
-      transition: all 0.3s;
-    }
-
-    button:hover {
-      color: $color-primario;
-      background-color: $color-terceario;
-      border-color: $color-primario;
     }
   }
 
@@ -209,7 +188,7 @@ body {
 
   h1 {
     padding: 10px 0px;
-    color: $color-primario;
+    color: v.$color-primario;
     text-transform: uppercase;
     font-size: 30px;
     font-weight: 800;
@@ -217,7 +196,7 @@ body {
 
   h2 {
     padding: 10px 0px;
-    color: $color-primario;
+    color: v.$color-primario;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 800;
@@ -225,7 +204,7 @@ body {
 
   h3 {
     padding: 10px 0px;
-    color: $color-primario;
+    color: v.$color-primario;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 800;
@@ -283,7 +262,7 @@ body {
   overflow: hidden;
 
   h1 {
-    color: $color-primario;
+    color: v.$color-primario;
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 800;
@@ -303,7 +282,7 @@ body {
   }
 
   label {
-    color: $color-terceario;
+    color: v.$color-terceario;
     margin-top: 10px;
   }
 
@@ -318,29 +297,15 @@ body {
   text-align: center;
 
   button {
-    color: $color-terceario;
-    font-weight: bold;
-    padding: 10px 40px;
-    border: none;
-    border-radius: 18px;
-    background-color: $color-primario;
-    border: 2px solid transparent;
-    transition: all 0.4s;
-  }
-
-  button:hover {
-    background-color: $color-terceario;
-    color: $color-primario;
-    border: 2px solid;
-    border-color: $color-primario;
-    cursor: pointer;
+    @extend .btn;
+    border: solid v.$color-terceario;
   }
 }
 
 .title_contact {
   padding: 20px;
   font-size: 60px;
-  color: $color-primario;
+  color: v.$color-primario;
   text-transform: uppercase;
 }
 
@@ -348,16 +313,17 @@ body {
   padding: 50px 0px;
 
   a {
-    color: white;
+    @extend .btn;
+    font-weight: 400;
     background-color: rgb(2, 176, 2);
     padding: 10px 30px;
-    border-radius: 20px;
     transition: all 0.3s;
     text-decoration: none;
   }
 
   a:hover {
     background-color: rgba(2, 192, 2, 0.727);
+    color: v.$color-terceario;
   }
 
   img {
@@ -366,7 +332,7 @@ body {
 }
 
 .footer {
-  background-color: $color-secundario;
+  background-color: v.$color-secundario;
 
   ul {
     list-style: none;
@@ -377,24 +343,24 @@ body {
   }
 
   p {
-    color: $color-terceario;
+    color: v.$color-terceario;
     padding: 5px 0px;
   }
 
   a {
     margin: 5px;
     text-decoration: none;
-    color: $color-terceario;
+    color: v.$color-terceario;
     transition: all 0.3s;
   }
 
   a:hover {
-    color: $color-primario;
+    color: v.$color-primario;
   }
 
   h3 {
     margin: 10px;
-    color: $color-primario;
+    color: v.$color-primario;
   }
 }
 
@@ -418,7 +384,7 @@ body {
 
   hr {
     width: 100%;
-    border-color: $color-primario;
+    border-color: v.$color-primario;
   }
 }
 

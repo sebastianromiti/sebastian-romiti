@@ -1,4 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.btn, .btn_formulario button, .contact_whatsapp a {
+  color: #fff0f0;
+  font-weight: bold;
+  margin: 10px 0px;
+  padding: 15px 40px;
+  background-color: #927459;
+  cursor: pointer;
+  border: 2px transparent;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.btn:hover, .btn_formulario button:hover, .contact_whatsapp a:hover {
+  color: #927459;
+  background-color: #fff0f0;
+  border-color: #927459;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -144,22 +162,6 @@ body {
   color: #fff0f0;
   margin: 10px;
 }
-.articles_container article button {
-  color: #fff0f0;
-  font-weight: bold;
-  margin: 10px 0px;
-  padding: 15px 40px;
-  background-color: #927459;
-  cursor: pointer;
-  border: 2px transparent;
-  border-radius: 30px;
-  transition: all 0.3s;
-}
-.articles_container article button:hover {
-  color: #927459;
-  background-color: #fff0f0;
-  border-color: #927459;
-}
 .articles_container article:hover {
   transform: scale(1.1);
 }
@@ -283,21 +285,7 @@ body {
   text-align: center;
 }
 .btn_formulario button {
-  color: #fff0f0;
-  font-weight: bold;
-  padding: 10px 40px;
-  border: none;
-  border-radius: 18px;
-  background-color: #927459;
-  border: 2px solid transparent;
-  transition: all 0.4s;
-}
-.btn_formulario button:hover {
-  background-color: #fff0f0;
-  color: #927459;
-  border: 2px solid;
-  border-color: #927459;
-  cursor: pointer;
+  border: solid #fff0f0;
 }
 
 .title_contact {
@@ -311,15 +299,15 @@ body {
   padding: 50px 0px;
 }
 .contact_whatsapp a {
-  color: white;
+  font-weight: 400;
   background-color: rgb(2, 176, 2);
   padding: 10px 30px;
-  border-radius: 20px;
   transition: all 0.3s;
   text-decoration: none;
 }
 .contact_whatsapp a:hover {
   background-color: rgba(2, 192, 2, 0.727);
+  color: #fff0f0;
 }
 .contact_whatsapp img {
   width: 50px;
