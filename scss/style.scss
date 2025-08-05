@@ -1,20 +1,66 @@
-@use "layout/variables" as v;
 @use "layout/button";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+$color-primario: #927459;
+$color-secundario: #1f1f1f;
+$color-terceario: #fff0f0;
+$bg-color: #f4f1d6;
+
+@mixin reset($m, $p, $box) {
+  margin: $m;
+  padding: $p;
+  box-sizing: $box;
+}
+
+@mixin titulos() {
+  color: $color-primario;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+@keyframes menu {
+  0% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes escaladotitulos {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes escalado {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  @include reset(0, 0, border-box);
 }
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: v.$bg-color;
+  background-color: $bg-color;
 }
 
 .header {
-  background-color: v.$color-secundario;
+  background-color: $color-secundario;
 }
 
 .header_container {
@@ -49,18 +95,18 @@ body {
   }
 
   a {
-    color: v.$color-terceario;
+    color: $color-terceario;
     text-decoration: none;
     font-size: 12px;
     text-transform: uppercase;
     padding: 10px 20px;
     border-radius: 20px;
     transition: all 0.4s;
-  }
 
-  a:hover {
-    background-color: v.$color-primario;
-    border-radius: 20px;
+    &:hover {
+      background-color: $color-primario;
+      border-radius: 20px;
+    }
   }
 }
 
@@ -73,7 +119,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../images/bg-inicio.jpg");
   background-position: center center;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -88,26 +134,46 @@ body {
     font-weight: 600;
     font-size: 30px;
     margin: 10px;
-    color: v.$color-terceario;
+    color: $color-terceario;
+    animation-name: escalado;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
 
   span {
     font-size: 35px;
     font-weight: 800;
-    color: v.$color-primario;
+    color: $color-primario;
     padding-left: 5px;
+    animation-name: escalado;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
 
   h2 {
     font-size: 25px;
     font-weight: 400;
-    color: v.$color-primario;
+    color: $color-primario;
+    animation-name: escalado;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
 
   p {
     font-size: 15px;
     margin: 40px;
-    color: v.$color-terceario;
+    color: $color-terceario;
+    animation-name: escalado;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.1s;
   }
 }
 
@@ -116,10 +182,7 @@ body {
   padding: 40px 0px;
 
   h1 {
-    color: v.$color-primario;
-    text-transform: uppercase;
-    font-size: 40px;
-    font-weight: 800;
+    @include titulos();
   }
 }
 
@@ -129,6 +192,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  animation-name: escalado;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 
   h3 {
     font-size: 20px;
@@ -140,12 +208,16 @@ body {
   article {
     width: 280px;
     height: 500px;
-    background-color: v.$color-secundario;
+    background-color: $color-secundario;
     margin: 0px 20px 50px 0px;
     padding-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.338);
     transition: transform 0.3s ease;
+    animation-delay: 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
 
     img {
       width: 100%;
@@ -156,13 +228,9 @@ body {
     }
 
     p {
-      color: v.$color-terceario;
+      color: $color-terceario;
       margin: 10px;
     }
-  }
-
-  article:hover {
-    transform: scale(1.1);
   }
 }
 
@@ -188,30 +256,47 @@ body {
 
   h1 {
     padding: 10px 0px;
-    color: v.$color-primario;
-    text-transform: uppercase;
-    font-size: 30px;
-    font-weight: 800;
+    @include titulos();
+    animation-name: escaladotitulos;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
 
   h2 {
     padding: 10px 0px;
-    color: v.$color-primario;
+    color: $color-primario;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 800;
+    animation-name: escaladotitulos;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
 
   h3 {
     padding: 10px 0px;
-    color: v.$color-primario;
+    color: $color-primario;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 800;
+    animation-name: escaladotitulos;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
 
   p {
     font-size: 12px;
+    animation-name: escalado;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
 
   .localmateros img {
@@ -220,10 +305,20 @@ body {
     width: 300px;
     box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.338);
     border-radius: 5px;
+    animation-name: escalado;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
 
   .quenosdiferencia ul li {
     font-size: 12px;
+    animation-name: escalado;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
 }
 .sobrenosotros {
@@ -247,25 +342,31 @@ body {
   flex-direction: column;
 }
 
+.contact_bg {
+  --opacidad-negro: 0.5;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/bg-contacto.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .contact_container {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  --opacidad-negro: 0.5;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../images/bg-contacto.jpg");
-  background-position: center center;
-  background-repeat: none;
-  background-size: cover;
   overflow: hidden;
+  animation-name: escalado;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 
   h1 {
-    color: v.$color-primario;
-    text-transform: uppercase;
-    font-size: 40px;
-    font-weight: 800;
+    @include titulos();
     text-align: center;
     padding: 40px 0px;
   }
@@ -282,7 +383,7 @@ body {
   }
 
   label {
-    color: v.$color-terceario;
+    color: $color-terceario;
     margin-top: 10px;
   }
 
@@ -298,14 +399,14 @@ body {
 
   button {
     @extend .btn;
-    border: solid v.$color-terceario;
+    border: solid $color-terceario;
   }
 }
 
 .title_contact {
   padding: 20px;
   font-size: 60px;
-  color: v.$color-primario;
+  color: $color-primario;
   text-transform: uppercase;
 }
 
@@ -319,11 +420,11 @@ body {
     padding: 10px 30px;
     transition: all 0.3s;
     text-decoration: none;
-  }
 
-  a:hover {
-    background-color: rgba(2, 192, 2, 0.727);
-    color: v.$color-terceario;
+    &:hover {
+      background-color: rgba(2, 192, 2, 0.727);
+      color: $color-terceario;
+    }
   }
 
   img {
@@ -332,7 +433,7 @@ body {
 }
 
 .footer {
-  background-color: v.$color-secundario;
+  background-color: $color-secundario;
 
   ul {
     list-style: none;
@@ -343,24 +444,24 @@ body {
   }
 
   p {
-    color: v.$color-terceario;
+    color: $color-terceario;
     padding: 5px 0px;
   }
 
   a {
     margin: 5px;
     text-decoration: none;
-    color: v.$color-terceario;
+    color: $color-terceario;
     transition: all 0.3s;
-  }
 
-  a:hover {
-    color: v.$color-primario;
+    &:hover {
+      color: $color-primario;
+    }
   }
 
   h3 {
     margin: 10px;
-    color: v.$color-primario;
+    color: $color-primario;
   }
 }
 
@@ -384,7 +485,7 @@ body {
 
   hr {
     width: 100%;
-    border-color: v.$color-primario;
+    border-color: $color-primario;
   }
 }
 
@@ -641,6 +742,11 @@ body {
   }
   .navbar {
     margin-right: 0;
+    animation-name: menu;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
   /*HEADER*/
 

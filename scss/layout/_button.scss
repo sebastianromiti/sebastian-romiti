@@ -1,18 +1,22 @@
-@use "./variables" as v;
+$color-primario: #927459;
+$color-secundario: #1f1f1f;
+$color-terceario: #fff0f0;
+$bg-color: #f4f1d6;
+
 .btn {
-  color: v.$color-terceario;
+  color: $color-terceario;
   font-weight: bold;
   margin: 10px 0px;
   padding: 15px 40px;
-  background-color: v.$color-primario;
+  background-color: $color-primario;
   cursor: pointer;
   border: 2px transparent;
   border-radius: 30px;
   transition: all 0.3s;
-}
 
-.btn:hover {
-  color: v.$color-primario;
-  background-color: v.$color-terceario;
-  border-color: v.$color-primario;
+  &:hover {
+    color: $color-primario;
+    background-color: $color-terceario;
+    border-color: $color-primario;
+  }
 }

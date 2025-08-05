@@ -10,13 +10,40 @@
   border-radius: 30px;
   transition: all 0.3s;
 }
-
 .btn:hover, .btn_formulario button:hover, .contact_whatsapp a:hover {
   color: #927459;
   background-color: #fff0f0;
   border-color: #927459;
 }
 
+@keyframes menu {
+  0% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes escaladotitulos {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes escalado {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -83,7 +110,7 @@ body {
   --opacidad-negro: 0.5;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bg-inicio.jpg");
   background-position: center center;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -99,22 +126,42 @@ body {
   font-size: 30px;
   margin: 10px;
   color: #fff0f0;
+  animation-name: escalado;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .main_container span {
   font-size: 35px;
   font-weight: 800;
   color: #927459;
   padding-left: 5px;
+  animation-name: escalado;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .main_container h2 {
   font-size: 25px;
   font-weight: 400;
   color: #927459;
+  animation-name: escalado;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .main_container p {
   font-size: 15px;
   margin: 40px;
   color: #fff0f0;
+  animation-name: escalado;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.1s;
 }
 
 .title_articles {
@@ -134,6 +181,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  animation-name: escalado;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .articles_container h3 {
   font-size: 20px;
@@ -150,6 +202,10 @@ body {
   border-radius: 5px;
   box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.338);
   transition: transform 0.3s ease;
+  animation-delay: 0.2s;
+}
+.articles_container article:hover {
+  transform: scale(1.1);
 }
 .articles_container article img {
   width: 100%;
@@ -161,9 +217,6 @@ body {
 .articles_container article p {
   color: #fff0f0;
   margin: 10px;
-}
-.articles_container article:hover {
-  transform: scale(1.1);
 }
 
 .sobrenosotros_container {
@@ -185,8 +238,13 @@ body {
   padding: 10px 0px;
   color: #927459;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 800;
+  animation-name: escaladotitulos;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .sobrenosotros_container h2 {
   padding: 10px 0px;
@@ -194,6 +252,11 @@ body {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 800;
+  animation-name: escaladotitulos;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .sobrenosotros_container h3 {
   padding: 10px 0px;
@@ -201,9 +264,19 @@ body {
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 800;
+  animation-name: escaladotitulos;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .sobrenosotros_container p {
   font-size: 12px;
+  animation-name: escalado;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .sobrenosotros_container .localmateros img {
   display: flex;
@@ -211,9 +284,19 @@ body {
   width: 300px;
   box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.338);
   border-radius: 5px;
+  animation-name: escalado;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .sobrenosotros_container .quenosdiferencia ul li {
   font-size: 12px;
+  animation-name: escalado;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 
 .sobrenosotros {
@@ -240,18 +323,27 @@ body {
   flex-direction: column;
 }
 
+.contact_bg {
+  --opacidad-negro: 0.5;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bg-contacto.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .contact_container {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  --opacidad-negro: 0.5;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bg-contacto.jpg");
-  background-position: center center;
-  background-repeat: none;
-  background-size: cover;
   overflow: hidden;
+  animation-name: escalado;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.2s;
 }
 .contact_container h1 {
   color: #927459;
@@ -575,6 +667,11 @@ body {
   }
   .navbar {
     margin-right: 0;
+    animation-name: menu;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.2s;
   }
   /*HEADER*/
   /*MQ-MAIN-INICIO*/
